@@ -5,9 +5,15 @@ from PIL import Image
 
 
 # Load trained model
-model = tf.keras.models.load_model(
-    "model/deepfake_detector_model.keras"
+import os
+
+MODEL_PATH = os.path.join(
+    os.path.dirname(__file__),
+    "model",
+    "deepfake_detector_model.keras"
 )
+
+model = tf.keras.models.load_model(MODEL_PATH)
 
 
 # Page settings
